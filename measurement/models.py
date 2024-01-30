@@ -8,6 +8,7 @@ class Sensor(models.Model):
 
 
 class Measurement(models.Model):
-    id = models.CharField(max_length=50, primary_key=True)
-    temperature = models.IntegerField()
-    date_time = models.DateTimeField()
+    sensor_id = models.ForeignKey(Sensor, on_delete=models.CASCADE, related_name='measurements')
+    temperature = models.DecimalField(max_digits=10, decimal_places=4)
+    date_time = models.DateTimeField(auto_now=True)
+

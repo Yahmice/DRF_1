@@ -5,5 +5,5 @@ from .views import SensorView, MeasurementView, SensorsRetrieve
 urlpatterns = [
     path('sensors/', SensorView.as_view()),
     path('measurements/', MeasurementView.as_view()),
-    path('sensor view/<pk>', SensorsRetrieve.as_view()),
+    path('sensors/<pk>', SensorsRetrieve.as_view()),
 ]
