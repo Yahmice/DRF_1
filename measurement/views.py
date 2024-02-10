@@ -2,7 +2,8 @@
 # TODO: ListCreateAPIView, RetrieveUpdateAPIView, CreateAPIView
 from rest_framework import status
 from rest_framework.decorators import api_view
-from rest_framework.generics import RetrieveAPIView, ListAPIView, CreateAPIView, RetrieveUpdateAPIView
+from rest_framework.generics import RetrieveAPIView, ListAPIView, CreateAPIView, RetrieveUpdateAPIView, UpdateAPIView, \
+    ListCreateAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -27,5 +28,5 @@ class SensorChange(RetrieveUpdateAPIView):
     serializer_class = SensorDetailSerializer
 
 
-class MeasurementView(CreateAPIView):
+class MeasurementView(ListCreateAPIView):
     serializer_class = MeasurementCreateSerializer
